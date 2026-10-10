@@ -1,0 +1,1 @@
+﻿{ "name":"echo-tower-server","version":"1.0.0","private":true,"type":"commonjs","dependencies":{"pg":"^8.11.0"} }

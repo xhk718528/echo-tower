@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: echo-tower-pg
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: echotower
+      POSTGRES_PASSWORD: echotower_secret
+      POSTGRES_DB: echo_tower
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U echotower -d echo_tower"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+volumes:
+  pgdata:

@@ -1,0 +1,23 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# 本地环境/数据库数据
+.env
+.env.local
+pgdata/
+*.local
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# 临时 / 生成缓存（如需保留可删除下列行）
+*.tmp
+*.temp
